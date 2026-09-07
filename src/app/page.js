@@ -1,20 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
+import Image from "next/image";
+import uncLogo from "../assets/UNC.png";
+
 export default function Home() {
   return (
     <main className="portfolio">
       <div className="background-texture" />
 
       <section className="hero">
-        <p className="intro">Hi, I'm</p>
-
-        <h1>
-          Peter Alforte
-        </h1>
+        <p className="intro">Hi, I'm Peter Alforte</p>
 
         <div className="accent-line" />
 
         <p className="description">
-          I do all sort of things, Check out my Works.
+          <strong>I do all sort of things. Check out my Works.</strong>
         </p>
 
         <div className="buttons">
@@ -48,6 +47,11 @@ export default function Home() {
 
       <section id="about" className="resume-section">
         <div className="resume-header">
+          <div className="resume-kicker">
+            <span>Profile</span>
+            <span className="resume-kicker-line" />
+            <span>Resume</span>
+          </div>
           <h2 className="about-title">About Me</h2>
         </div>
 
@@ -68,8 +72,14 @@ export default function Home() {
             <h3>Education</h3>
 
             <div className="education-row">
-              <div className="school-mark" aria-label="University logo placeholder">
-                UNC
+              <div className="school-mark">
+                <Image
+                  src={uncLogo}
+                  alt="University of Nueva Caceres logo"
+                  className="school-logo"
+                  fill
+                  sizes="64px"
+                />
               </div>
 
               <div className="education-copy">
@@ -86,6 +96,7 @@ export default function Home() {
 
             <div className="timeline">
               <div className="timeline-item">
+                <span className="timeline-year">2026</span>
                 <div className="timeline-dot" />
                 <div className="timeline-content">
                   <span className="timeline-date">Jan 2026 - Mar 2026</span>
@@ -95,6 +106,7 @@ export default function Home() {
               </div>
 
               <div className="timeline-item">
+                <span className="timeline-year">2026</span>
                 <div className="timeline-dot" />
                 <div className="timeline-content">
                   <span className="timeline-date">Jan 2026 - Jun 2026</span>
@@ -105,30 +117,68 @@ export default function Home() {
             </div>
           </article>
 
-          <article className="resume-card">
+          <article className="resume-card skills-card">
             <h3>Skills</h3>
-            <ul>
-              <li>Java</li>
-              <li>JavaScript</li>
-              <li>SQL</li>
-              <li>C++</li>
-              <li>C#</li>
-              <li>Python</li>
-              <li>React</li>
-              <li>Vue.js</li>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>MongoDB</li>
-              <li>MySQL</li>
-              <li>Supabase</li>
-              <li>MERN</li>
-              <li>MEVN</li>
-              <li>JavaFX</li>
-              <li>A*</li>
-              <li>Dijkstra</li>
-              <li>Leadership</li>
-              <li>Problem Solving</li>
-            </ul>
+
+            <div className="skills-columns">
+              <div className="skills-column">
+                <div className="skill-group">
+                  <h4>Technical Skills</h4>
+
+                  <h5>Programming Languages</h5>
+                  <ul className="skill-list">
+                    <li>Java</li>
+                    <li>JavaScript</li>
+                    <li>SQL</li>
+                    <li>C++</li>
+                    <li>C#</li>
+                    <li>Python</li>
+                  </ul>
+                </div>
+
+                <div className="skill-group">
+                  <h5>Web Development</h5>
+                  <ul className="skill-list">
+                    <li>React and Vue.js</li>
+                    <li>HTML and CSS</li>
+                    <li>Node.js and Express.js</li>
+                  </ul>
+                </div>
+
+                <div className="skill-group">
+                  <h5>Databases and Stacks</h5>
+                  <ul className="skill-list">
+                    <li>MySQL, MongoDB, Supabase</li>
+                    <li>MERN and MEVN</li>
+                    <li>JavaFX</li>
+                  </ul>
+                </div>
+
+                <div className="skill-group">
+                  <h5>Specialized Solutions</h5>
+                  <ul className="skill-list">
+                    <li>A* and Dijkstra algorithms</li>
+                    <li>Real-time updating systems</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="skills-column soft-skills-column">
+                <div className="skill-group">
+                  <h4>Soft Skills</h4>
+                  <ul className="skill-list">
+                    <li>Experienced leadership</li>
+                    <li>Effective communication in English and Tagalog</li>
+                    <li>Active listening</li>
+                    <li>Critical thinking and problem solving</li>
+                    <li>Creative solution building</li>
+                    <li>Attention to detail</li>
+                    <li>Good work ethic and discipline</li>
+                    <li>Responsibility and punctuality</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </section>
