@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
+import Link from "next/link";
 import uncLogo from "../assets/UNC.png";
 
 export default function Home() {
@@ -17,11 +18,11 @@ export default function Home() {
         </p>
 
         <div className="buttons">
-          <a href="#projects" className="button primary">
+          <a href="/projects" className="button primary">
             View My Work <span>→</span>
           </a>
 
-          <a href="#contact" className="button secondary">
+          <a href="/contact" className="button secondary">
             Contact Me
           </a>
         </div>
@@ -35,7 +36,11 @@ export default function Home() {
             LinkedIn
           </a>
 
-          <a href="mailto:your@email.com">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=peteralforte@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Email
           </a>
         </div>
@@ -166,15 +171,33 @@ export default function Home() {
               <div className="skills-column soft-skills-column">
                 <div className="skill-group">
                   <h4>Soft Skills</h4>
+                </div>
+
+                <div className="skill-group">
+                  <h5>Experienced Leader</h5>
                   <ul className="skill-list">
-                    <li>Experienced leadership</li>
-                    <li>Effective communication in English and Tagalog</li>
-                    <li>Active listening</li>
-                    <li>Critical thinking and problem solving</li>
-                    <li>Creative solution building</li>
-                    <li>Attention to detail</li>
-                    <li>Good work ethic and discipline</li>
-                    <li>Responsibility and punctuality</li>
+                    <li>Worked as team leader for three university projects.</li>
+                  </ul>
+                </div>
+
+                <div className="skill-group">
+                  <h5>Collaboration</h5>
+                  <ul className="skill-list">
+                    <li>Able to communicate effectively in Tagalog and English.</li>
+                  </ul>
+                </div>
+
+                <div className="skill-group">
+                  <h5>Problem Solver</h5>
+                  <ul className="skill-list">
+                    <li>Creative in creating suitable solutions to problems.</li>
+                  </ul>
+                </div>
+
+                <div className="skill-group">
+                  <h5>Good Work Ethic</h5>
+                  <ul className="skill-list">
+                    <li>Shows respect and discipline at all times.</li>
                   </ul>
                 </div>
               </div>
@@ -184,10 +207,11 @@ export default function Home() {
       </section>
 
       <nav className="navbar">
+        <Link href="/" aria-current="page">Home</Link>
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <Link href="/projects">Projects</Link>
+        <Link href="/skills">Skills</Link>
+        <Link href="/contact">Contact</Link>
       </nav>
     </main>
   );
