@@ -891,6 +891,19 @@ body {
   font-size: 0.76rem;
 }
 
+.project-github-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #9eb8ef;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-github-link:hover {
+  color: #ffffff;
+}
+
 .project-skills {
   padding-top: 90px;
 }

@@ -2,54 +2,7 @@
 
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
-
-const projectCategories = {
-  "App Development": {
-    number: "01",
-    projects: [
-      {
-        name: "PathSmart",
-        type: "JavaFX / A* Algorithm",
-        description:
-          "A pathfinding application that uses the A* algorithm to locate products or stores and determine an efficient route.",
-        tags: ["JavaFX", "A* Algorithm", "Pathfinding"],
-      },
-      {
-        name: "Naga City People's Mall Navigation",
-        type: "Indoor Navigation",
-        description:
-          "An indoor navigation system designed to help visitors locate stores and products inside a large market in Naga City.",
-        tags: ["Navigation", "Dijkstra", "Real-time Systems"],
-      },
-    ],
-  },
-  "Web Development": {
-    number: "02",
-    projects: [
-      {
-        name: "Thinkers' Online Classes",
-        type: "Education Platform",
-        description:
-          "A prototype online school website for children's literacy. It accepts student applications, tracks teacher schedules in real time, and stores data securely.",
-        tags: ["React", "Node.js", "Database"],
-      },
-    ],
-  },
-  "Sales Consultant": {
-    number: "03",
-    projects: [
-      {
-        name: "Accenture Academy",
-        type: "Salesforce Administration",
-        description:
-          "Completed Salesforce Administration training and developed an understanding of Salesforce management in a business setting.",
-        tags: ["Salesforce", "Administration", "Business Systems"],
-      },
-    ],
-  },
-};
-
-const categoryNames = Object.keys(projectCategories);
+import { categoryNames, projectCategories } from "../../data/projects";
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState(categoryNames[0]);
@@ -109,8 +62,18 @@ export default function ProjectsPage() {
                 </div>
                 <p>{project.description}</p>
                 <div className="project-tags">
-                      {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                  {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
+                {project.githubUrl && (
+                  <a
+                    className="project-github-link"
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View GitHub repository →
+                  </a>
+                )}
               </article>
             ))}
           </div>
