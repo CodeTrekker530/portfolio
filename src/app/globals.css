@@ -130,15 +130,6 @@ body {
   color: #8fb1ff;
 }
 
-.hero h1 {
-  margin: 0;
-
-  font-size: clamp(1.5rem, 3.5vw, 4rem);
-  line-height: 0.95;
-  letter-spacing: -0.06em;
-  font-weight: 700;
-}
-
 .accent-line {
   width: 55px;
   height: 3px;
@@ -148,21 +139,16 @@ body {
   background: var(--accent);
 }
 
-.description {
+.hero-title,
+.projects-header h1 {
   max-width: 760px;
 
-  margin: 28px 0 0;
-
-  font-size: clamp(1.6rem, 2.5vw, 2.3rem);
-  line-height: 1.08;
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  margin: 0;
 
   color: #f5f7fa;
-}
-
-.description strong {
-  color: #ffffff;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
 }
 
 .peek-about {
@@ -598,9 +584,9 @@ body {
 ======================================== */
 
 .navbar {
-  position: absolute;
+  position: fixed;
 
-  top: 45px;
+  top: 24px;
   right: 60px;
 
   z-index: 5;
@@ -647,10 +633,6 @@ body {
   padding: 150px 40px 90px;
 }
 
-.projects-page .navbar {
-  position: absolute;
-}
-
 .projects-header,
 .project-categories,
 .project-skills {
@@ -668,7 +650,7 @@ body {
   max-width: 760px;
   margin: 0;
   color: #f5f7fa;
-  font-size: clamp(2.8rem, 7vw, 6.4rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   line-height: 0.98;
   letter-spacing: -0.05em;
 }
@@ -697,7 +679,7 @@ body {
   max-width: 760px;
   margin: 0;
   color: #f5f7fa;
-  font-size: clamp(2.8rem, 7vw, 6.4rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   line-height: 0.98;
   letter-spacing: -0.05em;
 }
@@ -1051,7 +1033,7 @@ body {
   }
 
   .navbar {
-    top: 30px;
+    top: 18px;
     right: 24px;
 
     gap: 18px;
@@ -1061,12 +1043,8 @@ body {
     font-size: 12px;
   }
 
-  .hero h1 {
-    font-size: clamp(3.5rem, 16vw, 5rem);
-  }
-
   .description {
-    font-size: 16px;
+    font-size: clamp(2.2rem, 11vw, 4rem);
   }
 
   .socials {

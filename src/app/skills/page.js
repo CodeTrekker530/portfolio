@@ -1,17 +1,11 @@
-import Link from "next/link";
+import Navbar from "../../components/Navbar";
 
 export default function SkillsPage() {
   return (
     <main className="portfolio skills-page">
       <div className="background-texture" />
 
-      <nav className="navbar">
-        <Link href="/">Home</Link>
-        <Link href="/#about">About</Link>
-        <Link href="/projects">Projects</Link>
-        <Link href="/skills" aria-current="page">Skills</Link>
-        <Link href="/contact">Contact</Link>
-      </nav>
+      <Navbar />
 
       <section className="projects-header">
         <div className="resume-kicker">

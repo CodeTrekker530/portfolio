@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import uncLogo from "../assets/UNC.png";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
@@ -9,13 +10,15 @@ export default function Home() {
       <div className="background-texture" />
 
       <section className="hero">
-        <p className="intro">Hi, I'm Peter Alforte</p>
+        <div className="resume-kicker hero-kicker">
+          <span>Hi, I&apos;m</span>
+          <span className="resume-kicker-line" />
+          <span>Peter Alforte</span>
+        </div>
 
-        <div className="accent-line" />
-
-        <p className="description">
-          <strong>I do all sort of things. Check out my Works.</strong>
-        </p>
+        <h1 className="hero-title">
+          I do all sort of things. Check out my Works.
+        </h1>
 
         <div className="buttons">
           <a href="/projects" className="button primary">
@@ -206,13 +209,7 @@ export default function Home() {
         </div>
       </section>
 
-      <nav className="navbar">
-        <Link href="/" aria-current="page">Home</Link>
-        <a href="#about">About</a>
-        <Link href="/projects">Projects</Link>
-        <Link href="/skills">Skills</Link>
-        <Link href="/contact">Contact</Link>
-      </nav>
+      <Navbar />
     </main>
   );
 }

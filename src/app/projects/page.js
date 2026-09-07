@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Navbar from "../../components/Navbar";
 
 const projectCategories = {
   "App Development": {
@@ -59,13 +59,7 @@ export default function ProjectsPage() {
     <main className="portfolio projects-page">
       <div className="background-texture" />
 
-      <nav className="navbar">
-        <Link href="/">Home</Link>
-        <Link href="/#about">About</Link>
-        <Link href="/projects" aria-current="page">Projects</Link>
-        <Link href="/skills">Skills</Link>
-        <Link href="/contact">Contact</Link>
-      </nav>
+      <Navbar />
 
       <section className="projects-header">
         <div className="resume-kicker">
