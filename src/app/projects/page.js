@@ -16,9 +16,9 @@ export default function ProjectsPage() {
 
       <section className="projects-header">
         <div className="resume-kicker">
-          <span>Selected Work</span>
+          <span>Work</span>
           <span className="resume-kicker-line" />
-          <span>Projects & Skills</span>
+          <span>Projects</span>
         </div>
         <h1>Things I have built and learned.</h1>
         <p>
