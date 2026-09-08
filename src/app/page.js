@@ -66,12 +66,8 @@ export default function Home() {
           <article className="resume-card summary-card">
             <h3>Summary</h3>
             <p>
-              Bachelor of Science in Computer Science graduate with experience in Java,
-              JavaScript, C++, Python, and SQL. Skilled in web and mobile development,
-              including the MERN stack and JavaFX, with hands-on experience creating practical
-              software solutions such as PathSmart, a pathfinding system using the A* algorithm.
-              Strong problem-solving abilities and a solid foundation in software development
-              principles.
+              I am a Bachelor of Science in Computer Science graduate with Knowledge in App Development 
+              and Web Development. I created a pathfinding system using the A* algorithm.
             </p>
           </article>
 

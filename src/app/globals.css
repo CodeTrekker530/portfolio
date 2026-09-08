@@ -164,7 +164,7 @@ body {
   border-radius: 999px;
 
   color: rgba(245, 247, 250, 0.84);
-  font-size: clamp(0.85rem, 1.3vw, 1.1rem);
+  font-size: clamp(0.8rem, 1.3vw, 1.1rem);
   line-height: 1.4;
   font-weight: 500;
   text-decoration: none;
@@ -223,7 +223,7 @@ body {
   margin-bottom: 14px;
 
   color: #9eb8ef;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;}
@@ -1357,6 +1357,22 @@ body {
 
   .project-category {
     padding: 22px 18px;
+  }
+
+  .project-filter {
+    flex-wrap: nowrap;
+    margin-right: -24px;
+    padding: 4px 24px 4px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .project-filter::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-filter-button {
+    flex: 0 0 auto;
   }
 
   .project-list,
