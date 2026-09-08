@@ -31,6 +31,16 @@ export default function Navbar() {
           </Link>
         );
       })}
+
+      <Link
+        className="navbar-library"
+        href="/library"
+        aria-label="Project library"
+        title="Project library"
+        aria-current={pathname === "/library" ? "page" : undefined}
+      >
+        <span className="library-folder-icon" aria-hidden="true" />
+      </Link>
     </nav>
   );
 }
