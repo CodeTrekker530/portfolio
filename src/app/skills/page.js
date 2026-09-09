@@ -1,5 +1,40 @@
 import Navbar from "../../components/Navbar";
 
+const skillGroups = [
+  {
+    number: "01",
+    label: "Languages",
+    title: "Programming Languages",
+    description: "Languages used for application logic, scripting, interfaces, and data work.",
+    skills: ["Java", "JavaScript", "Python", "C++", "C#", "SQL"],
+    accent: "blue",
+  },
+  {
+    number: "02",
+    label: "Interfaces",
+    title: "Frontend and Frameworks",
+    description: "Tools I use to build responsive interfaces and interactive application experiences.",
+    skills: ["React", "Vue.js", "React Native", "HTML", "CSS", "Bootstrap", "JavaFX"],
+    accent: "green",
+  },
+  {
+    number: "03",
+    label: "Architecture",
+    title: "Backend and Tech Stacks",
+    description: "Application structures and backend tools used to connect interfaces, services, and data.",
+    skills: ["Node.js", "Express.js", "MERN", "MEVN", "CRUD applications", "Real-time systems"],
+    accent: "gold",
+  },
+  {
+    number: "04",
+    label: "Storage and logic",
+    title: "Databases and Algorithms",
+    description: "Foundations for storing information, querying data, and building efficient solutions.",
+    skills: ["MySQL", "MongoDB", "Supabase", "A* algorithm", "Dijkstra algorithm", "Database design"],
+    accent: "rose",
+  },
+];
+
 export default function SkillsPage() {
   return (
     <main className="portfolio skills-page">
@@ -15,57 +50,26 @@ export default function SkillsPage() {
         </div>
         <h1>Tools I use to turn ideas into working solutions.</h1>
         <p>
-          A categorized overview of my technical abilities and the professional strengths I bring
-          to a team.
+          A categorized overview of the languages, frameworks, stacks, databases, and algorithms I work with.
         </p>
       </section>
 
-      <section className="skills-page-grid" aria-label="Skills by category">
-        <article className="skills-page-card technical-focus">
-          <span className="skills-page-number">01</span>
-          <h2>Programming Languages</h2>
-          <ul className="skills-page-list">
-            <li>Java</li>
-            <li>JavaScript</li>
-            <li>SQL</li>
-            <li>C++</li>
-            <li>C#</li>
-            <li>Python</li>
-          </ul>
-        </article>
-
-        <article className="skills-page-card">
-          <span className="skills-page-number">02</span>
-          <h2>Web Development</h2>
-          <ul className="skills-page-list">
-            <li>React and Vue.js</li>
-            <li>HTML and CSS</li>
-            <li>Node.js and Express.js</li>
-            <li>MERN and MEVN</li>
-          </ul>
-        </article>
-
-        <article className="skills-page-card">
-          <span className="skills-page-number">03</span>
-          <h2>Databases and Solutions</h2>
-          <ul className="skills-page-list">
-            <li>MySQL, MongoDB, and Supabase</li>
-            <li>JavaFX</li>
-            <li>A* and Dijkstra algorithms</li>
-            <li>Real-time updating systems</li>
-          </ul>
-        </article>
-
-        <article className="skills-page-card soft-focus">
-          <span className="skills-page-number">04</span>
-          <h2>Soft Skills</h2>
-          <ul className="skills-page-list">
-            <li>Experienced leadership</li>
-            <li>Collaboration and communication</li>
-            <li>Problem solving</li>
-            <li>Good work ethic</li>
-          </ul>
-        </article>
+      <section className="skills-dashboard" aria-label="Skills overview">
+        <div className="skills-page-grid" aria-label="Capabilities by category">
+          {skillGroups.map((group) => (
+            <article className={`skills-page-card ${group.accent}-focus`} key={group.title}>
+              <div className="skills-card-heading">
+                <span className="skills-page-number">{group.number}</span>
+                <span className="skills-card-label">{group.label}</span>
+              </div>
+              <h2>{group.title}</h2>
+              <p className="skills-card-description">{group.description}</p>
+              <div className="skills-chip-list">
+                {group.skills.map((skill) => <span key={skill}>{skill}</span>)}
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
     </main>
   );

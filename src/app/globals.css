@@ -1321,21 +1321,65 @@ body {
   margin: 0 auto;
 }
 
+.skills-dashboard {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skills-card-label {
+  color: #9eb8ef;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.skills-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skills-chip-list span {
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(4, 12, 24, 0.26);
+  color: #dce8ff;
+  font-size: 0.78rem;
+}
+
 .skills-page-card {
-  min-height: 230px;
-  padding: 28px;
+  min-height: 310px;
+  padding: 26px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.035);
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12);
 }
 
-.skills-page-card.technical-focus {
-  background: linear-gradient(180deg, rgba(65, 105, 225, 0.14), rgba(255, 255, 255, 0.025));
+.skills-page-card.green-focus {
+  background: linear-gradient(180deg, rgba(78, 174, 137, 0.12), rgba(255, 255, 255, 0.025));
 }
 
-.skills-page-card.soft-focus {
-  background: linear-gradient(180deg, rgba(122, 162, 255, 0.1), rgba(255, 255, 255, 0.025));
+.skills-page-card.gold-focus {
+  background: linear-gradient(180deg, rgba(225, 173, 80, 0.12), rgba(255, 255, 255, 0.025));
+}
+
+.skills-page-card.rose-focus {
+  background: linear-gradient(180deg, rgba(214, 105, 126, 0.12), rgba(255, 255, 255, 0.025));
+}
+
+.skills-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.skills-card-label {
+  color: #8391a8;
 }
 
 .skills-page-number {
@@ -1346,9 +1390,22 @@ body {
 }
 
 .skills-page-card h2 {
-  margin: 16px 0 20px;
+  margin: 28px 0 12px;
   color: #ffffff;
-  font-size: 1.45rem;
+  font-size: 1.28rem;
+}
+
+.skills-card-description {
+  min-height: 72px;
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.skills-chip-list span {
+  border-color: rgba(122, 162, 255, 0.2);
+  color: #cfe0ff;
 }
 
 .skills-page-list {
@@ -1424,6 +1481,14 @@ body {
   .skills-page-grid,
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .skills-page-card {
+    min-height: 0;
+  }
+
+  .skills-card-description {
+    min-height: 0;
   }
 
   .project-item-topline,
