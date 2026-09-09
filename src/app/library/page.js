@@ -11,6 +11,7 @@ const projectFolders = [
     description: "Pathfinding application documentation",
     documents: 0,
     href: "",
+    githubUrl: "https://github.com/CodeTrekker530/Pathsmart-Mobile.git",
   },
   {
     name: "Naga City People's Mall Navigation",
@@ -19,6 +20,7 @@ const projectFolders = [
     description: "Indoor navigation system documentation",
     documents: 0,
     href: "",
+    githubUrl: "",
   },
   {
     name: "Thinkers' Online Classes",
@@ -27,6 +29,7 @@ const projectFolders = [
     description: "Online school prototype documentation",
     documents: 0,
     href: "",
+    githubUrl: "",
   },
   {
     name: "Sales Consultant for Solar Company",
@@ -35,6 +38,7 @@ const projectFolders = [
     description: "",
     documents: 0,
     href: "",
+    githubUrl: "",
   },
 ];
 
@@ -68,7 +72,7 @@ export default function LibraryPage() {
               <span className="resume-kicker-line" />
               <span>Project Library</span>
             </div>
-            <h1>Project documentation</h1>
+            <h1>Project Documentation</h1>
             <p>Keep your project notes, plans, screenshots, and technical documents in one place.</p>
           </div>
           <button className="library-new-button" type="button">+ New folder</button>
@@ -125,13 +129,9 @@ export default function LibraryPage() {
 
         <div className={`folder-grid ${view === "list" ? "list-view" : ""}`}>
           {visibleFolders.map((folder) => (
-            <a
+            <div
               className="folder-card"
-              href={folder.href || undefined}
               key={folder.name}
-              onClick={(event) => {
-                if (!folder.href) event.preventDefault();
-              }}
             >
               <div className="folder-card-topline">
                 <span className="folder-icon" aria-hidden="true">▰</span>
@@ -141,7 +141,17 @@ export default function LibraryPage() {
               <span className="folder-category">{folder.category}</span>
               <span className="folder-description">{folder.description}</span>
               <span className="folder-meta">{folder.documents} documents · {folder.updated}</span>
-            </a>
+              {folder.githubUrl && (
+                <span
+                  className="folder-github-link"
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  <a href={folder.githubUrl} target="_blank" rel="noopener noreferrer">
+                    View GitHub repository →
+                  </a>
+                </span>
+              )}
+            </div>
           ))}
         </div>
 

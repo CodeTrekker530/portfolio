@@ -905,6 +905,22 @@ body {
   font-size: 0.76rem;
 }
 
+.folder-github-link {
+  margin-top: 14px;
+  color: #9eb8ef;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.folder-github-link a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.folder-github-link a:hover {
+  color: #ffffff;
+}
+
 .folder-grid.list-view {
   grid-template-columns: 1fr;
 }
@@ -912,7 +928,7 @@ body {
 .folder-grid.list-view .folder-card {
   min-height: 0;
   display: grid;
-  grid-template-columns: 42px minmax(180px, 1fr) 1.5fr auto;
+  grid-template-columns: 42px minmax(0, 1.6fr) minmax(150px, 1fr) minmax(150px, auto);
   align-items: center;
   gap: 16px;
 }
@@ -924,6 +940,34 @@ body {
 
 .folder-grid.list-view .folder-icon {
   grid-column: 1;
+  grid-row: 1;
+}
+
+.folder-grid.list-view .folder-card > strong {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.folder-grid.list-view .folder-category {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.folder-grid.list-view .folder-description {
+  grid-column: 2 / 4;
+  grid-row: 2;
+}
+
+.folder-grid.list-view .folder-meta {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.folder-grid.list-view .folder-github-link {
+  grid-column: 4;
+  grid-row: 1;
+  margin: 0;
 }
 
 .folder-grid.list-view .folder-menu {
@@ -1394,26 +1438,41 @@ body {
   }
 
   .folder-grid.list-view .folder-card {
-    display: flex;
-    min-height: 190px;
-    align-items: stretch;
+    grid-template-columns: 42px minmax(0, 1fr);
+    align-items: center;
   }
 
   .folder-grid.list-view .folder-card-topline {
-    display: flex;
-    margin-bottom: 22px;
+    display: contents;
+  }
+
+  .folder-grid.list-view .folder-card > strong {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .folder-grid.list-view .folder-category {
-    margin-top: 8px;
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 0;
   }
 
   .folder-grid.list-view .folder-description {
-    margin-top: 12px;
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 0;
   }
 
   .folder-grid.list-view .folder-meta {
-    padding-top: 20px;
+    grid-column: 2;
+    grid-row: 4;
+    padding-top: 0;
+  }
+
+  .folder-grid.list-view .folder-github-link {
+    grid-column: 2;
+    grid-row: 5;
+    margin-top: 0;
   }
 
   .projects-section-heading > p {
