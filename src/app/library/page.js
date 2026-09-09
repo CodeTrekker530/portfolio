@@ -1,51 +1,15 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import Navbar from "../../components/Navbar";
-
-const projectFolders = [
-  {
-    name: "PathSmart",
-    category: "App Development",
-    updated: "Add date",
-    description: "Pathfinding application documentation",
-    documents: 0,
-    href: "",
-    githubUrl: "https://github.com/CodeTrekker530/Pathsmart-Mobile.git",
-  },
-  {
-    name: "Naga City People's Mall Navigation",
-    category: "App Development",
-    updated: "Add date",
-    description: "Indoor navigation system documentation",
-    documents: 0,
-    href: "",
-    githubUrl: "",
-  },
-  {
-    name: "Thinkers' Online Classes",
-    category: "Web Development",
-    updated: "Add date",
-    description: "Online school prototype documentation",
-    documents: 0,
-    href: "",
-    githubUrl: "",
-  },
-  {
-    name: "Sales Consultant for Solar Company",
-    category: "Sales / Business",
-    updated: "Add date",
-    description: "",
-    documents: 0,
-    href: "",
-    githubUrl: "",
-  },
-];
+import { projectFolders } from "../../data/projectLibrary";
 
 export default function LibraryPage() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All projects");
   const [view, setView] = useState("grid");
+  const router = useRouter();
 
   const visibleFolders = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -132,6 +96,15 @@ export default function LibraryPage() {
             <div
               className="folder-card"
               key={folder.name}
+              role="link"
+              tabIndex={0}
+              onClick={() => router.push(`/library/${folder.slug}`)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  router.push(`/library/${folder.slug}`);
+                }
+              }}
             >
               <div className="folder-card-topline">
                 <span className="folder-icon" aria-hidden="true">▰</span>
@@ -140,7 +113,7 @@ export default function LibraryPage() {
               <strong>{folder.name}</strong>
               <span className="folder-category">{folder.category}</span>
               <span className="folder-description">{folder.description}</span>
-              <span className="folder-meta">{folder.documents} documents · {folder.updated}</span>
+              <span className="folder-meta">{folder.files.length} documents · {folder.updated}</span>
               {folder.githubUrl && (
                 <span
                   className="folder-github-link"

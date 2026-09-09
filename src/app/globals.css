@@ -855,12 +855,18 @@ body {
   color: inherit;
   text-decoration: none;
   transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 
 .folder-card:hover {
   transform: translateY(-3px);
   border-color: rgba(122, 162, 255, 0.42);
   background: rgba(65, 105, 225, 0.1);
+}
+
+.folder-card:focus-visible {
+  outline: 2px solid #7aa2ff;
+  outline-offset: 3px;
 }
 
 .folder-card-topline {
@@ -968,6 +974,142 @@ body {
   grid-column: 4;
   grid-row: 1;
   margin: 0;
+}
+
+.folder-page-shell {
+  max-width: 960px;
+}
+
+.folder-back-link {
+  display: inline-block;
+  margin-bottom: 42px;
+  color: #9eb8ef;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+
+.folder-back-link:hover {
+  color: #ffffff;
+}
+
+.folder-page-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  margin-bottom: 42px;
+}
+
+.folder-page-icon {
+  color: #7aa2ff;
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+.folder-page-heading h1 {
+  margin: 14px 0 0;
+  color: #f5f7fa;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.folder-page-heading p {
+  max-width: 600px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.folder-page-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.document-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.document-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.document-file-icon {
+  display: grid;
+  width: 42px;
+  height: 48px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(214, 105, 126, 0.45);
+  border-radius: 6px;
+  background: rgba(214, 105, 126, 0.12);
+  color: #f0a8b8;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.document-details {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.document-details strong {
+  overflow: hidden;
+  color: #edf4ff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.document-details span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.document-open-link,
+.folder-repository-link {
+  margin-left: auto;
+  color: #9eb8ef;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.document-open-link:hover,
+.folder-repository-link:hover {
+  color: #ffffff;
+}
+
+.folder-empty-state {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 48px 20px;
+  border: 1px dashed rgba(255, 255, 255, 0.16);
+  color: var(--muted);
+  text-align: center;
+}
+
+.folder-empty-state strong {
+  color: #edf4ff;
+}
+
+.folder-repository-link {
+  display: inline-block;
+  margin-top: 24px;
 }
 
 .folder-grid.list-view .folder-menu {
@@ -1434,6 +1576,33 @@ body {
     margin-bottom: 30px;
   }
 
+  .folder-back-link {
+    margin-bottom: 30px;
+  }
+
+  .folder-page-heading {
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+
+  .folder-page-icon {
+    font-size: 2.2rem;
+  }
+
+  .folder-page-heading h1 {
+    font-size: 2rem;
+  }
+
+  .document-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .document-open-link {
+    width: 100%;
+    margin-left: 58px;
+  }
+
   .library-new-button {
     margin-top: 22px;
   }
@@ -1536,7 +1705,7 @@ body {
 
   .folder-grid.list-view .folder-github-link {
     grid-column: 2;
-    grid-row: 5;
+    grid-row: 6;
     margin-top: 0;
   }
 
